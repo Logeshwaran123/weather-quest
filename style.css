@@ -1,10 +1,74 @@
-*, *::after, *::before {
-    margin: unset;
-    padding: unset;
-    box-sizing: border-box;
+*,
+*::after,
+*::before {
+  margin: unset;
+  padding: unset;
+  box-sizing: border-box;
 }
 
 html {
-    font-size: 18px;
-    font-family: 'Segoe UI', sans-serif;
+  font-size: 18px;
+  font-family:
+    Segoe UI,
+    sans-serif;
+}
+
+:root {
+  --surface: #16111b;
+  --surface-dim: #16111b;
+  --surface-bright: #3d3741;
+  --surface-container-lowest: #110c15;
+  --surface-container-low: #1f1a23;
+  --surface-container: #231e27;
+  --surface-container-high: #2e2832;
+  --surface-container-highest: #39323d;
+  --on-surface: #eadfed;
+  --on-surface-variant: #cfc2d6;
+  --inverse-surface: #eadfed;
+  --inverse-on-surface: #342e38;
+  --outline: #988d9f;
+  --outline-variant: #4d4354;
+  --surface-tint: #ddb7ff;
+  --primary: #ddb7ff;
+  --on-primary: #490080;
+  --primary-container: #b76dff;
+  --on-primary-container: #400071;
+  --inverse-primary: #842bd2;
+  --secondary: #c0c6de;
+  --on-secondary: #2a3043;
+  --secondary-container: #43485d;
+  --on-secondary-container: #b2b7d0;
+  --tertiary: #ffb2b7;
+  --on-tertiary: #67001b;
+  --tertiary-container: #ff516a;
+  --on-tertiary-container: #5b0017;
+  --error: #ffb4ab;
+  --on-error: #690005;
+  --error-container: #93000a;
+  --on-error-container: #ffdad6;
+  --primary-fixed: #f0dbff;
+  --primary-fixed-dim: #ddb7ff;
+  --on-primary-fixed: #2c0051;
+  --on-primary-fixed-variant: #6900b3;
+  --secondary-fixed: #dce1fb;
+  --secondary-fixed-dim: #c0c6de;
+  --on-secondary-fixed: #151b2d;
+  --on-secondary-fixed-variant: #40465a;
+  --tertiary-fixed: #ffdadb;
+  --tertiary-fixed-dim: #ffb2b7;
+  --on-tertiary-fixed: #40000d;
+  --on-tertiary-fixed-variant: #92002a;
+  --background: #16111b;
+  --on-background: #eadfed;
+  --surface-variant: #39323d;
+  --electric-purple: #a855f7;
+  --midnight-void: #020617;
+  --rose-alert: #f43f5e;
+  --surface-charcoal: #0f172a;
+  --on-surface-muted: #94a3b8;
+}
+
+h1 {
+  background-color: var(--background);
+  color: var(--on-background);
 }
