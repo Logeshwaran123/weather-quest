@@ -1,3 +1,55 @@
+@import url("./components.css");
+
+/* jetbrains-mono-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./public/fonts/jetbrains-mono-v24-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* jetbrains-mono-800 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 800;
+  src: url("./public/fonts/jetbrains-mono-v24-latin-800.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* inter-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./public/fonts/inter-v20-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* inter-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./public/fonts/inter-v20-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* inter-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./public/fonts/inter-v20-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* inter-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./public/fonts/inter-v20-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
 *,
 *::after,
 *::before {
@@ -8,62 +60,50 @@
 
 html {
   font-size: 18px;
-  font-family:
-    Segoe UI,
-    sans-serif;
+  font-family: Inter, sans-serif;
 }
 
 :root {
-  --surface: #16111b;
-  --surface-dim: #16111b;
-  --surface-bright: #3d3741;
-  --surface-container-lowest: #110c15;
-  --surface-container-low: #1f1a23;
-  --surface-container: #231e27;
-  --surface-container-high: #2e2832;
-  --surface-container-highest: #39323d;
-  --on-surface: #eadfed;
-  --on-surface-variant: #cfc2d6;
-  --inverse-surface: #eadfed;
-  --inverse-on-surface: #342e38;
-  --outline: #988d9f;
-  --outline-variant: #4d4354;
-  --surface-tint: #ddb7ff;
-  --primary: #ddb7ff;
-  --on-primary: #490080;
-  --primary-container: #b76dff;
-  --on-primary-container: #400071;
-  --inverse-primary: #842bd2;
-  --secondary: #c0c6de;
-  --on-secondary: #2a3043;
-  --secondary-container: #43485d;
-  --on-secondary-container: #b2b7d0;
-  --tertiary: #ffb2b7;
-  --on-tertiary: #67001b;
-  --tertiary-container: #ff516a;
-  --on-tertiary-container: #5b0017;
-  --error: #ffb4ab;
-  --on-error: #690005;
-  --error-container: #93000a;
-  --on-error-container: #ffdad6;
-  --primary-fixed: #f0dbff;
-  --primary-fixed-dim: #ddb7ff;
-  --on-primary-fixed: #2c0051;
-  --on-primary-fixed-variant: #6900b3;
-  --secondary-fixed: #dce1fb;
-  --secondary-fixed-dim: #c0c6de;
-  --on-secondary-fixed: #151b2d;
-  --on-secondary-fixed-variant: #40465a;
-  --tertiary-fixed: #ffdadb;
-  --tertiary-fixed-dim: #ffb2b7;
-  --on-tertiary-fixed: #40000d;
-  --on-tertiary-fixed-variant: #92002a;
-  --background: #16111b;
-  --on-background: #eadfed;
-  --surface-variant: #39323d;
-  --electric-purple: #a855f7;
-  --midnight-void: #020617;
-  --rose-alert: #f43f5e;
-  --surface-charcoal: #0f172a;
-  --on-surface-muted: #94a3b8;
+  --home-primary: #38bdf8;
+  --home-secondary: #1e293b;
+  --home-tertiary: #94a3b8;
+  --home-neutral: #0f172a;
+  --home-card-bg: #131b2e;
+
+  --border-gray: #414757;
+
+  /* Container */
+  --container-sz: 600px;
+  --body-bg: #0b1326;
+
+  /* General Colors */
+  --white: #fff;
+
+  --switch-sz: 44px;
+  --circle-sz: 20px;
+  --switch-container-sz: calc(var(--switch-sz) - 2px);
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: var(--body-bg);
+}
+
+#root {
+  color: var(--home-tertiary);
+  background: var(--home-card-bg);
+  border-radius: 12px;
+  padding: 64px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  max-width: var(--container-sz);
+  row-gap: 24px;
+}
+
+#root h1 {
+  font-size: 48px;
 }
