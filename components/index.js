@@ -1,10 +1,12 @@
 import Toggler from "./Toggler.js";
 import InputForm from "./InputForm.js";
 import Header from "./Header.js";
+import Stats from "./Stats.js";
 
 const initialState = {
   option: "city name",
   labels: ["city name", "coordinates"],
+  state: {},
 };
 
 const store = new Proxy(initialState, {
@@ -19,9 +21,22 @@ function render(parent) {
   const header = Header.bind(store);
   const toggler = Toggler.bind(store);
   const inputForm = InputForm.bind(store);
+  const stats = Stats.bind(store);
 
-  parent.replaceChildren(header.call(store), toggler.call(), inputForm.call());
-  return root;
+  if (store.state.main && store.state.wind) {
+    parent.replaceChildren(
+      header.call(store),
+      toggler.call(),
+      inputForm.call(),
+      stats.call(),
+    );
+  } else {
+    parent.replaceChildren(
+      header.call(store),
+      toggler.call(),
+      inputForm.call(),
+    );
+  }
 }
 
 export { store };

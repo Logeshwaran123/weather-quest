@@ -6,7 +6,6 @@ function InputForm() {
 
   const inpForCity = document.createElement("input");
   inpForCity.placeholder = "Enter City Name";
-
   const inpForLat = document.createElement("input");
   inpForLat.placeholder = "Enter Latitude";
   const inpForLon = document.createElement("input");
@@ -40,13 +39,15 @@ function InputForm() {
       store.option === "city name"
         ? `q=${inpForCity.value}`
         : `lat=${inpForLat.value}&lon=${inpForLon.value}`;
-    const uri = `https://api.openweathermap.org/data/2.5/weather?appid=HERE-ADD-YOUR-APP-ID&${query}`;
+    const uri = `https://api.openweathermap.org/data/2.5/weather?appid=28bcf38c60e275fdc4ec350975c54696&${query}`;
 
     fetch(uri)
       .then((res) => res.json())
-      .then(({ main }) => console.log("result data", main))
-      .catch((err) => console.log(err))
-      .finally(() => console.log("Weather quest with Open Weather Map"));
+      .then(({ main, wind }) => {
+        console.log(main, wind);
+        store.state = structuredClone({ main, wind });
+      })
+      .catch((err) => console.log(err));
   });
 
   return container;
